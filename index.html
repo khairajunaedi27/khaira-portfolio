@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f0e8" />
+  <meta name="description" content="Khaira Junaedi — content, editorial, research, and strategic communications portfolio." />
+  <title>Khaira Junaedi — Content & Communications</title>
+  <style>
+    :root {
+      --paper: #f4f0e8;
+      --paper-2: #eae4d9;
+      --ink: #282a27;
+      --muted: #6d7068;
+      --line: rgba(40, 42, 39, .17);
+      --accent: #8a6048;
+      --white: #fffdf8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    ::selection { background: #d7c1ae; color: var(--ink); }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; font-weight: 700; color: var(--muted); }
+    .site-header { position: sticky; top: 0; z-index: 10; background: rgba(244,240,232,.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: .95rem; font-weight: 750; letter-spacing: -.035em; white-space: nowrap; }
+    .brand span { color: var(--accent); }
+    .nav-right { display: flex; align-items: center; gap: clamp(14px, 2.3vw, 30px); }
+    .nav-links { display: flex; align-items: center; gap: clamp(12px, 2vw, 24px); }
+    .nav-links a { color: var(--muted); font-size: .8rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .language-toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 99px; padding: 3px; gap: 2px; background: transparent; }
+    .language-toggle button { cursor: pointer; border: 0; background: transparent; color: var(--muted); border-radius: 99px; padding: 6px 9px; font-size: .7rem; font-weight: 700; }
+    .language-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+    .menu-button { display: none; border: 1px solid var(--line); background: transparent; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; }
+    .hero { padding: clamp(76px, 12vw, 150px) 0 86px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(220px, .55fr); align-items: end; gap: 48px; }
+    .hero h1 { font-size: clamp(3.4rem, 9vw, 8rem); line-height: .91; letter-spacing: -.085em; font-weight: 560; margin: 22px 0 28px; max-width: 900px; }
+    .hero h1 em { font-family: var(--serif); font-weight: 400; letter-spacing: -.08em; }
+    .hero-lead { max-width: 650px; font-size: clamp(1.05rem, 1.6vw, 1.28rem); line-height: 1.65; color: #555850; margin: 0; }
+    .hero-side { border-left: 1px solid var(--line); padding: 6px 0 8px 24px; }
+    .hero-side p { margin: 8px 0 0; font-size: .88rem; color: var(--muted); }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 0 18px; border-radius: 99px; border: 1px solid var(--ink); font-size: .82rem; font-weight: 700; transition: transform .2s, background .2s; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary { background: var(--ink); color: var(--paper); }
+    .button.secondary { background: transparent; }
+    .section { padding: clamp(72px, 10vw, 124px) 0; border-bottom: 1px solid var(--line); }
+    .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 36px; margin-bottom: 54px; }
+    .section-heading h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.5rem); letter-spacing: -.075em; line-height: .98; font-weight: 550; }
+    .section-heading p { margin: 8px 0 0; max-width: 560px; color: var(--muted); }
+    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(32px, 7vw, 100px); }
+    .about-note { padding: 24px; background: var(--paper-2); border-radius: 4px; align-self: start; }
+    .about-note .big-number { font-family: var(--serif); font-size: 4.5rem; letter-spacing: -.07em; line-height: 1; }
+    .about-note p { margin: 12px 0 0; color: var(--muted); font-size: .9rem; }
+    .about-copy p { font-size: clamp(1.05rem, 1.7vw, 1.28rem); margin: 0 0 20px; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .skill-list span { border: 1px solid var(--line); border-radius: 99px; padding: 8px 12px; font-size: .75rem; color: #555850; }
+    .works-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .work-card { min-height: 300px; padding: clamp(22px, 3vw, 36px); border: 1px solid var(--line); display: flex; flex-direction: column; justify-content: space-between; background: rgba(255,253,248,.36); transition: background .25s, transform .25s; }
+    .work-card:hover { background: var(--white); transform: translateY(-3px); }
+    .work-card:nth-child(2) { background: var(--paper-2); }
+    .work-card:nth-child(3) { background: #e7e0d5; }
+    .work-card:nth-child(4) { background: rgba(255,253,248,.6); }
+    .work-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+    .work-index { color: var(--muted); font-size: .75rem; }
+    .work-type { border: 1px solid var(--line); padding: 5px 9px; border-radius: 99px; font-size: .67rem; text-transform: uppercase; letter-spacing: .08em; }
+    .work-card h3 { font-size: clamp(1.5rem, 3vw, 2.3rem); letter-spacing: -.055em; line-height: 1.1; font-weight: 550; margin: 42px 0 12px; }
+    .work-card p { color: #5e6059; font-size: .9rem; max-width: 470px; margin: 0; }
+    .work-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .75rem; }
+    .work-foot strong { color: var(--ink); font-weight: 650; }
+    .experience-list { border-top: 1px solid var(--line); }
+    .experience-item { display: grid; grid-template-columns: .7fr 1.3fr; gap: 40px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+    .experience-meta { color: var(--muted); font-size: .8rem; }
+    .experience-item h3 { margin: 0 0 8px; font-size: 1.3rem; letter-spacing: -.035em; font-weight: 600; }
+    .experience-item p { margin: 0; color: var(--muted); max-width: 680px; font-size: .92rem; }
+    .contact-section { background: var(--ink); color: var(--paper); }
+    .contact-section .eyebrow, .contact-section .section-heading p { color: #c0bdb4; }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 50px; align-items: end; }
+    .contact-grid h2 { font-size: clamp(3rem, 8vw, 7rem); line-height: .92; letter-spacing: -.085em; font-weight: 500; margin: 18px 0 24px; }
+    .contact-grid h2 em { font-family: var(--serif); font-weight: 400; }
+    .contact-grid p { color: #c0bdb4; max-width: 500px; }
+    .contact-details { border-top: 1px solid rgba(244,240,232,.25); }
+    .contact-row { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid rgba(244,240,232,.25); font-size: .85rem; }
+    .contact-row span { color: #c0bdb4; }
+    .contact-row a { text-decoration: underline; text-underline-offset: 4px; }
+    .contact-row a:hover { color: white; }
+    .footer { padding: 22px 0; background: var(--ink); color: #c0bdb4; font-size: .72rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid rgba(244,240,232,.2); padding-top: 20px; }
+    .footer strong { color: var(--paper); font-weight: 600; }
+    .edit-note { margin-top: 18px; font-size: .72rem !important; color: #aaa69d !important; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .nav { min-height: 68px; }
+      .menu-button { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-right { gap: 10px; }
+      .nav-links { display: none; position: absolute; top: 67px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 18px 24px 22px; flex-direction: column; align-items: flex-start; gap: 16px; }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: .95rem; }
+      .hero { padding: 82px 0 70px; }
+      .hero-grid, .about-grid, .section-heading, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .hero h1 { font-size: clamp(3.5rem, 17vw, 6rem); }
+      .hero-side { max-width: 420px; }
+      .section-heading { margin-bottom: 34px; }
+      .about-note { max-width: 420px; }
+      .works-grid { grid-template-columns: 1fr; }
+      .work-card { min-height: 270px; }
+      .experience-item { grid-template-columns: 1fr; gap: 10px; }
+      .contact-grid { gap: 32px; }
+      .contact-grid h2 { font-size: clamp(3.5rem, 16vw, 6rem); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Khaira Junaedi home">KHAIRA<span>.</span>JUNAEDI</a>
+      <div class="nav-right">
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+          <a href="#about" data-en="About" data-id="Tentang">About</a>
+          <a href="#work" data-en="Selected work" data-id="Karya pilihan">Selected work</a>
+          <a href="#experience" data-en="Experience" data-id="Pengalaman">Experience</a>
+          <a href="#contact" data-en="Contact" data-id="Kontak">Contact</a>
+        </nav>
+        <div class="language-toggle" aria-label="Choose language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="id" aria-pressed="false">ID</button>
+        </div>
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow" data-en="Content · Editorial · Research · Communications" data-id="Konten · Editorial · Riset · Komunikasi">Content · Editorial · Research · Communications</div>
+          <h1 data-en-html="Stories with<br><em>substance.</em>" data-id-html="Cerita dengan<br><em>makna.</em>">Stories with<br><em>substance.</em></h1>
+          <p class="hero-lead" data-en="I’m Khaira Junaedi, a content and communications professional working across journalism, editorial production, research, and stakeholder engagement." data-id="Saya Khaira Junaedi, profesional konten dan komunikasi dengan pengalaman di bidang jurnalistik, produksi editorial, riset, dan pelibatan pemangku kepentingan.">I’m Khaira Junaedi, a content and communications professional working across journalism, editorial production, research, and stakeholder engagement.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#work"><span data-en="Explore selected work" data-id="Lihat karya pilihan">Explore selected work</span> ↘</a>
+            <a class="button secondary" href="#contact"><span data-en="Get in touch" data-id="Hubungi saya">Get in touch</span> ↗</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <div class="eyebrow" data-en="A little about my practice" data-id="Tentang bidang kerja saya">A little about my practice</div>
+          <p data-en="Turning complex topics into clear, evidence-informed stories for different audiences." data-id="Mengolah topik kompleks menjadi cerita yang jelas dan berbasis bukti untuk beragam audiens.">Turning complex topics into clear, evidence-informed stories for different audiences.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow" data-en="01 / About" data-id="01 / Tentang">01 / About</div>
+          <div>
+            <h2 data-en="Curiosity, shaped<br>into communication." data-id="Rasa ingin tahu,<br>menjadi komunikasi.">Curiosity, shaped<br>into communication.</h2>
+          </div>
+        </div>
+        <div class="about-grid">
+          <div class="about-note">
+            <div class="eyebrow" data-en="Professional background" data-id="Latar belakang profesional">Professional background</div>
+            <div class="big-number">6+</div>
+            <p data-en="Years of experience across journalism, editorial production, research, and communications." data-id="Tahun pengalaman di bidang jurnalistik, produksi editorial, riset, dan komunikasi.">Years of experience across journalism, editorial production, research, and communications.</p>
+          </div>
+          <div class="about-copy">
+            <p data-en="My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand." data-id="Pekerjaan saya memadukan riset, storytelling yang cermat, dan komunikasi yang berorientasi pada audiens. Saya tertarik pada bagaimana peliputan yang kuat dan keputusan editorial yang tepat dapat membuat gagasan kompleks lebih mudah dipahami.">My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand.</p>
+            <p data-en="Across media, technology, sustainability, and corporate projects, I develop content and publications that connect evidence, context, and people." data-id="Dalam proyek media, teknologi, keberlanjutan, dan korporat, saya mengembangkan konten serta publikasi yang menghubungkan bukti, konteks, dan manusia.">Across media, technology, sustainability, and corporate projects, I develop content and publications that connect evidence, context, and people.</p>
+            <div class="skill-list" aria-label="Areas of practice">
+              <span data-en="Content development" data-id="Pengembangan konten">Content development</span>
+              <span data-en="Editorial production" data-id="Produksi editorial">Editorial production</span>
+              <span data-en="Research & interviews" data-id="Riset & wawancara">Research & interviews</span>
+              <span data-en="Corporate storytelling" data-id="Storytelling korporat">Corporate storytelling</span>
+              <span data-en="Stakeholder engagement" data-id="Pelibatan pemangku kepentingan">Stakeholder engagement</span>
+              <span data-en="Publication development" data-id="Pengembangan publikasi">Publication development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow" data-en="02 / Selected work" data-id="02 / Karya pilihan">02 / Selected work</div>
+          <div>
+            <h2 data-en="Different formats.<br>A shared purpose." data-id="Beragam format.<br>Satu tujuan.">Different formats.<br>A shared purpose.</h2>
+            <p data-en="A selection of work areas and projects. Individual case studies and publication links can be added as they are ready to share." data-id="Pilihan bidang kerja dan proyek. Studi kasus serta tautan publikasi dapat ditambahkan setelah siap dibagikan.">A selection of work areas and projects. Individual case studies and publication links can be added as they are ready to share.</p>
+          </div>
+        </div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="work-top"><span class="work-index">01 — CORPORATE HISTORY</span><span class="work-type" data-en="Research & writing" data-id="Riset & penulisan">Research & writing</span></div>
+            <div>
+              <h3 data-en="SUCOFINDO at 70" data-id="SUCOFINDO di usia 70">SUCOFINDO at 70</h3>
+              <p data-en="Contributed to research and narrative development for a corporate history publication, including 34 interviews with former and current employees, directors, and other key stakeholders." data-id="Berkontribusi dalam riset dan pengembangan narasi untuk publikasi sejarah perusahaan, termasuk 34 wawancara dengan mantan dan karyawan aktif, direksi, serta pemangku kepentingan utama lainnya.">Contributed to research and narrative development for a corporate history publication, including 34 interviews with former and current employees, directors, and other key stakeholders.</p>
+            </div>
+            <div class="work-foot"><strong data-en="Corporate storytelling" data-id="Storytelling korporat">Corporate storytelling</strong><span data-en="Publication project" data-id="Proyek publikasi">Publication project</span></div>
+          </article>
+          <article class="work-card">
+            <div class="work-top"><span class="work-index">02 — JOURNALISM</span><span class="work-type" data-en="Reporting & editing" data-id="Peliputan & penyuntingan">Reporting & editing</span></div>
+            <div>
+              <h3 data-en="Reporting for public understanding" data-id="Jurnalisme untuk pemahaman publik">Reporting for public understanding</h3>
+              <p data-en="Journalism and editorial work focused on developing clear, audience-relevant stories from reporting, interviews, and research." data-id="Karya jurnalistik dan editorial yang berfokus pada pengembangan cerita yang jelas dan relevan bagi audiens melalui peliputan, wawancara, dan riset.">Journalism and editorial work focused on developing clear, audience-relevant stories from reporting, interviews, and research.</p>
+            </div>
+            <div class="work-foot"><strong>Journalism</strong><span data-en="Editorial work" data-id="Karya editorial">Editorial work</span></div>
+          </article>
+          <article class="work-card">
+            <div class="work-top"><span class="work-index">03 — CONTENT STRATEGY</span><span class="work-type" data-en="Content development" data-id="Pengembangan konten">Content development</span></div>
+            <div>
+              <h3 data-en="Complex ideas, clearly told" data-id="Gagasan kompleks, disampaikan dengan jelas">Complex ideas, clearly told</h3>
+              <p data-en="Content development and editorial production across media, technology, sustainability, and corporate topics." data-id="Pengembangan konten dan produksi editorial untuk topik media, teknologi, keberlanjutan, dan korporat.">Content development and editorial production across media, technology, sustainability, and corporate topics.</p>
+            </div>
+            <div class="work-foot"><strong data-en="Editorial strategy" data-id="Strategi editorial">Editorial strategy</strong><span data-en="Multi-sector" data-id="Lintas sektor">Multi-sector</span></div>
+          </article>
+          <article class="work-card">
+            <div class="work-top"><span class="work-index">04 — RESEARCH</span><span class="work-type" data-en="Interviews & synthesis" data-id="Wawancara & sintesis">Interviews & synthesis</span></div>
+            <div>
+              <h3 data-en="Research into narrative" data-id="Dari riset menjadi narasi">Research into narrative</h3>
+              <p data-en="Interview-led research and synthesis that help organize information, surface perspectives, and shape evidence-informed narratives." data-id="Riset berbasis wawancara dan sintesis untuk menata informasi, menggali perspektif, dan membangun narasi berbasis bukti.">Interview-led research and synthesis that help organize information, surface perspectives, and shape evidence-informed narratives.</p>
+            </div>
+            <div class="work-foot"><strong data-en="Research & synthesis" data-id="Riset & sintesis">Research & synthesis</strong><span data-en="Evidence-informed" data-id="Berbasis bukti">Evidence-informed</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow" data-en="03 / Experience" data-id="03 / Pengalaman">03 / Experience</div>
+          <div>
+            <h2 data-en="A practice built<br>across disciplines." data-id="Pengalaman lintas<br>disiplin.">A practice built<br>across disciplines.</h2>
+            <p data-en="My experience spans editorial work, research, and communications—bringing together people, information, and purpose." data-id="Pengalaman saya mencakup pekerjaan editorial, riset, dan komunikasi—menghubungkan manusia, informasi, dan tujuan.">My experience spans editorial work, research, and communications—bringing together people, information, and purpose.</p>
+          </div>
+        </div>
+        <div class="experience-list">
+          <article class="experience-item">
+            <div class="experience-meta" data-en="JOURNALISM & MEDIA" data-id="JURNALISME & MEDIA">JOURNALISM & MEDIA</div>
+            <div>
+              <h3 data-en="Reporting, editorial production & storytelling" data-id="Peliputan, produksi editorial & storytelling">Reporting, editorial production & storytelling</h3>
+              <p data-en="Developing stories and editorial content through reporting, interviews, research, and clear narrative structure." data-id="Mengembangkan cerita dan konten editorial melalui peliputan, wawancara, riset, dan struktur narasi yang jelas.">Developing stories and editorial content through reporting, interviews, research, and clear narrative structure.</p>
+            </div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-meta" data-en="CORPORATE HISTORY & RESEARCH" data-id="SEJARAH KORPORAT & RISET">CORPORATE HISTORY & RESEARCH</div>
+            <div>
+              <h3 data-en="Interview research & publication development" data-id="Riset wawancara & pengembangan publikasi">Interview research & publication development</h3>
+              <p data-en="Collaborating on evidence-based corporate narratives and project materials, including work for SUCOFINDO’s 70th-anniversary history publication." data-id="Berkolaborasi dalam penyusunan narasi korporat berbasis bukti dan materi proyek, termasuk publikasi sejarah 70 tahun SUCOFINDO.">Collaborating on evidence-based corporate narratives and project materials, including work for SUCOFINDO’s 70th-anniversary history publication.</p>
+            </div>
+          </article>
+          <article class="experience-item">
+            <div class="experience-meta" data-en="CONTENT & COMMUNICATIONS" data-id="KONTEN & KOMUNIKASI">CONTENT & COMMUNICATIONS</div>
+            <div>
+              <h3 data-en="Audience-focused content development" data-id="Pengembangan konten berorientasi audiens">Audience-focused content development</h3>
+              <p data-en="Translating complex subjects into accessible content and publications for different audiences and project contexts." data-id="Menerjemahkan topik kompleks menjadi konten dan publikasi yang mudah dipahami oleh beragam audiens dan kebutuhan proyek.">Translating complex subjects into accessible content and publications for different audiences and project contexts.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow" data-en="04 / Contact" data-id="04 / Kontak">04 / Contact</div>
+          <h2 data-en-html="Let’s make<br><em>meaningful</em><br>work." data-id-html="Mari ciptakan<br>karya yang<br><em>bermakna.</em>">Let’s make<br><em>meaningful</em><br>work.</h2>
+          <p data-en="Open to thoughtful collaborations across content, editorial, research, and communications." data-id="Terbuka untuk kolaborasi di bidang konten, editorial, riset, dan komunikasi.">Open to thoughtful collaborations across content, editorial, research, and communications.</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-row"><span data-en="Email" data-id="Email">Email</span><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com ↗</a></div>
+          <div class="contact-row"><span>LinkedIn</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">Add profile URL ↗</a></div>
+          <p class="edit-note" data-en="Before publishing: replace the email and LinkedIn placeholders with your real contact details." data-id="Sebelum dipublikasikan: ganti placeholder email dan LinkedIn dengan informasi kontakmu yang benar.">Before publishing: replace the email and LinkedIn placeholders with your real contact details.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> <strong>Khaira Junaedi</strong></span>
+      <span data-en="Independent thinking. Intentional storytelling." data-id="Pemikiran mandiri. Storytelling yang terarah.">Independent thinking. Intentional storytelling.</span>
+    </div>
+  </footer>
+
+  <script>
+    const languageButtons = document.querySelectorAll("[data-lang]");
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === "id" ? "id" : "en";
+      document.querySelectorAll("[data-en][data-id]").forEach((element) => {
+        element.textContent = lang === "id" ? element.dataset.id : element.dataset.en;
+      });
+      document.querySelectorAll("[data-en-html][data-id-html]").forEach((element) => {
+        element.innerHTML = lang === "id" ? element.dataset.idHtml : element.dataset.enHtml;
+      });
+      languageButtons.forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
+      });
+    }
+    languageButtons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+    navLinks.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+    }));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

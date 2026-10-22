@@ -57,6 +57,16 @@
     .section-heading p { margin: 8px 0 0; max-width: 560px; color: var(--muted); }
     .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(32px, 7vw, 100px); }
     .about-note { padding: 24px; background: var(--paper-2); border-radius: 4px; align-self: start; }
+    .about-portrait {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 35%;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
     .about-note .big-number { font-family: var(--serif); font-size: 4.5rem; letter-spacing: -.07em; line-height: 1; }
     .about-note p { margin: 12px 0 0; color: var(--muted); font-size: .9rem; }
     .about-copy p { font-size: clamp(1.05rem, 1.7vw, 1.28rem); margin: 0 0 20px; }
@@ -124,7 +134,7 @@
 <body>
   <header class="site-header">
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="Khaira Junaedi home">KHAIRA UMMAH<span></span>JUNAEDI PUTRI</a>
+      <a class="brand" href="#home" aria-label="Khaira Junaedi home">KHAIRA<span> </span>JUNAEDI</a>
       <div class="nav-right">
         <nav class="nav-links" id="navLinks" aria-label="Main navigation">
           <a href="#about" data-en="About" data-id="Tentang">About</a>
@@ -150,13 +160,12 @@
           <p class="hero-lead" data-en="I’m Khaira Junaedi, a content and communications professional working across journalism, editorial production, research, and stakeholder engagement." data-id="Saya Khaira Junaedi, profesional konten dan komunikasi dengan pengalaman di bidang jurnalistik, produksi editorial, riset, dan pelibatan pemangku kepentingan.">I work across journalism, research, and communications, turning complex information into clear, thoughtful narratives grounded in evidence.</p>
           <div class="hero-actions">
             <a class="button primary" href="#work"><span data-en="Explore selected work" data-id="Lihat karya pilihan">Across my work</span> ↘</a>
-            <a class="button secondary" href="#contact"><span data-en="Get in touch" data-id="Hubungi saya">Meet me</span> ↗</a>
+            <a class="button secondary" href="#contact"><span data-en="Get in touch" data-id="Hubungi saya">Get in touch</span> ↗</a>
           </div>
         </div>
         <aside class="hero-side">
           <div class="eyebrow" data-en="A little about my practice" data-id="Tentang bidang kerja saya">A note in the margin</div>
-          <p data-en="Turning complex topics into clear, evidence-informed stories for different audiences." data-id="Mengolah topik kompleks menjadi cerita yang jelas dan berbasis bukti untuk beragam audiens.">Hi! I'm Khaira Ummah Junaedi Putri
-Thanks for stopping by. Here's what I've been working on.</p>
+          <p data-en="Turning complex topics into clear, evidence-informed stories for different audiences." data-id="Mengolah topik kompleks menjadi cerita yang jelas dan berbasis bukti untuk beragam audiens.">Hi! I'm Khaira Ummah Junaedi Putri, thanks for stopping by. Here's what I've been working on.</p>
         </aside>
       </div>
     </section>
@@ -166,24 +175,29 @@ Thanks for stopping by. Here's what I've been working on.</p>
         <div class="section-heading">
           <div class="eyebrow" data-en="01 / About" data-id="01 / Tentang">01 / About</div>
           <div>
-            <h2 data-en="Curiosity, shaped<br>into communication." data-id="Rasa ingin tahu,<br>menjadi komunikasi.">Curiosity, shaped<br>into communication.</h2>
+            <h2 data-en="Curiosity, shaped<br>into communication." data-id="Rasa ingin tahu,<br>menjadi komunikasi.">A way of seing.<br>
           </div>
         </div>
         <div class="about-grid">
+          <img
+  src="khaira-portrait.PNG"
+  alt="Khaira Junaedi"
+  class="about-portrait"
+/>
           <div class="about-note">
-            <div class="eyebrow" data-en="Professional background" data-id="Latar belakang profesional">Professional background</div>
+            <div class="eyebrow" data-en="Professional background" data-id="Latar belakang profesional">A Career in Progress</div>
             <div class="big-number">6+</div>
-            <p data-en="Years of experience across journalism, editorial production, research, and communications." data-id="Tahun pengalaman di bidang jurnalistik, produksi editorial, riset, dan komunikasi.">Years of experience across journalism, editorial production, research, and communications.</p>
+            <p data-en="Years of experience across journalism, editorial production, research, and communications." data-id="Tahun pengalaman di bidang jurnalistik, produksi editorial, riset, dan komunikasi.">Years across journalism, editorial production, research, and communications.</p>
           </div>
           <div class="about-copy">
-            <p data-en="My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand." data-id="Pekerjaan saya memadukan riset, storytelling yang cermat, dan komunikasi yang berorientasi pada audiens. Saya tertarik pada bagaimana peliputan yang kuat dan keputusan editorial yang tepat dapat membuat gagasan kompleks lebih mudah dipahami.">My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand.</p>
-            <p data-en="Across media, technology, sustainability, and corporate projects, I develop content and publications that connect evidence, context, and people." data-id="Dalam proyek media, teknologi, keberlanjutan, dan korporat, saya mengembangkan konten serta publikasi yang menghubungkan bukti, konteks, dan manusia.">Across media, technology, sustainability, and corporate projects, I develop content and publications that connect evidence, context, and people.</p>
+            <p data-en="My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand." data-id="Pekerjaan saya memadukan riset, storytelling yang cermat, dan komunikasi yang berorientasi pada audiens. Saya tertarik pada bagaimana peliputan yang kuat dan keputusan editorial yang tepat dapat membuat gagasan kompleks lebih mudah dipahami.">My work has taken me from reporting on public affairs and national policy to exploring Indonesia’s technology ecosystem, documenting corporate histories, and covering sustainability.</p>
+            <p data-en="Across media, technology, sustainability, and corporate projects, I develop content and publications that connect evidence, context, and people." data-id="Dalam proyek media, teknologi, keberlanjutan, dan korporat, saya mengembangkan konten serta publikasi yang menghubungkan bukti, konteks, dan manusia.">Across these different fields, I’ve learned to ask better questions, follow the evidence, and make complex information easier to understand. Today, I bring that experience to editorial projects, research, and communications, with a focus on telling clear, well-grounded stories that keep people at the center.</p>
             <div class="skill-list" aria-label="Areas of practice">
               <span data-en="Content development" data-id="Pengembangan konten">Content development</span>
               <span data-en="Editorial production" data-id="Produksi editorial">Editorial production</span>
-              <span data-en="Research & interviews" data-id="Riset & wawancara">Research & interviews</span>
+              <span data-en="Research & interviews" data-id="Riset & wawancara">Interviewing & qualitative research</span>
               <span data-en="Corporate storytelling" data-id="Storytelling korporat">Corporate storytelling</span>
-              <span data-en="Stakeholder engagement" data-id="Pelibatan pemangku kepentingan">Stakeholder engagement</span>
+              <span data-en="Stakeholder engagement" data-id="Pelibatan pemangku kepentingan">Data journalism</span>
               <span data-en="Publication development" data-id="Pengembangan publikasi">Publication development</span>
             </div>
           </div>

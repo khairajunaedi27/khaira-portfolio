@@ -55,7 +55,34 @@
     .section-heading { display: grid; grid-template-columns: 1fr 2fr; gap: 36px; margin-bottom: 54px; }
     .section-heading h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.5rem); letter-spacing: -.075em; line-height: .98; font-weight: 550; }
     .section-heading p { margin: 8px 0 0; max-width: 560px; color: var(--muted); }
-    .about-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(32px, 7vw, 100px); }
+    .about-grid {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: clamp(32px, 7vw, 100px);
+  align-items: start;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.about-left .about-portrait {
+  width: 100%;
+  max-width: 300px;
+  height: 320px;
+  margin: 0;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.about-left .about-note {
+  width: 100%;
+  box-sizing: border-box;
+}
+   
     .about-note { padding: 24px; background: var(--paper-2); border-radius: 4px; align-self: start; }
     .about-portrait {
   display: block;
@@ -179,6 +206,7 @@
           </div>
         </div>
         <div class="about-grid">
+          <div class="about-left">
           <img
   src="khaira-portrait.PNG"
   alt="Khaira Junaedi"
@@ -188,6 +216,7 @@
             <div class="eyebrow" data-en="Professional background" data-id="Latar belakang profesional">A Career in Progress</div>
             <div class="big-number">6+</div>
             <p data-en="Years of experience across journalism, editorial production, research, and communications." data-id="Tahun pengalaman di bidang jurnalistik, produksi editorial, riset, dan komunikasi.">Years across journalism, editorial production, research, and communications.</p>
+          </div>
           </div>
           <div class="about-copy">
             <p data-en="My work brings together research, thoughtful storytelling, and audience-focused communication. I’m interested in how strong reporting and careful editorial choices can make complex ideas easier to understand." data-id="Pekerjaan saya memadukan riset, storytelling yang cermat, dan komunikasi yang berorientasi pada audiens. Saya tertarik pada bagaimana peliputan yang kuat dan keputusan editorial yang tepat dapat membuat gagasan kompleks lebih mudah dipahami.">My work has taken me from reporting on public affairs and national policy to exploring Indonesia’s technology ecosystem, documenting corporate histories, and covering sustainability.</p>
